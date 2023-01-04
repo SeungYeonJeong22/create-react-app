@@ -608,6 +608,31 @@ body {
   opacity: 0;
 }
 
+/* .curator_player {
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  width: 100vw;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  opacity: 0;
+} */
+
+.curator_player_item {
+  padding: 0 50px;
+  position: fixed;
+  top: 75%;
+  margin-bottom: 17.55vh;
+  margin-top: -6.6666666667vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 50vh;
+  /* margin: 0 20px; */
+}
+
 .connect_btn {
   border-radius: 50%;
   width: 18vh;

@@ -163,6 +163,9 @@ $('.item').click(function(){
 	
 	// Hide
 	mainToPlaylist.to($('#curator'), 0.8, {display: 'none', opacity: 0, scale: 1.1, ease: Power2.easeInOut}, 0)
+	
+	mainToHome.fromTo($('.curator_player_item'), 0.5, {opacity: 1, display: 'block', x: 0},
+						{opacity: 0, x: 30, display: 'none', ease: Power2.easeInOut}, 0.5)
 			
 	// mainToPlaylist.fromTo($('.curator_list'), 0.5, {opacity: 1, display: 'block', x: 0},
 	// 									{opacity: 0, x: 30, display: 'none', ease: Power2.easeInOut}, 0.5),
@@ -193,6 +196,9 @@ $('.back_btn').click(function(){
 
 		mainToHome.fromTo($('.curator_list'), 0.5, {opacity: 1, display: 'block', x: 0},
 											{opacity: 0, x: 30, display: 'none', ease: Power2.easeInOut}, 0.5),
+
+		// mainToHome.fromTo($('.curator_player_item'), 0.5, {opacity: 1, display: 'block', x: 0},
+		// 									{opacity: 0, x: 30, display: 'none', ease: Power2.easeInOut}, 0.5),											
 
 
 		mainToHome.to($('.back_btn'), 0.5, {display: 'none', opacity: 0, x: 15, ease: Power2.easeInOut}, 0.5),
