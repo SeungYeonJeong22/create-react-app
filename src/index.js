@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -228,4 +230,25 @@ $('.back_btn').click(function(){
 											{y: 0, position: 'relative', ease: Power2.easeInOut}, 1.3);
 		// $('.text-wrap .text').css('position', 'relative');
 	}
+});
+
+// ===== Search Music Page =====
+$("#search_music_page").click(function(){
+	var homeToSearch = new TimelineMax({});
+
+	// Hide
+	$('.logo-text').css('display', 'none');
+	homeToSearch.to($('.line, .text-wrap'), 0.5, {display: 'none', opacity: 0, y: -20, ease: Power2.easeInOut}, 0);
+	
+	// Background down
+	homeToSearch.to($('.wave-container'), 1, {yPercent: 30, ease: Power2.easeInOut}, 0);
+
+	// Show
+	$('#drop_down').css('display', 'block');
+	homeToSearch.fromTo($('.list_box'), 0.8, {x: 15},
+										{display: 'flex', opacity: 1, x: 0, ease: Power2.easeInOut}, 1);
+		
+	homeToSearch.fromTo($('.submit_buttom'), 0.8, {opacity: 0, x: 30},
+										{opacity: 1, x: 0, ease: Power2.easeInOut}, 1);
+		
 });
