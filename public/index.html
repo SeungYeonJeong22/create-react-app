@@ -1,258 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Music app - TweenMax</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"><link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="wrapper">
-  <!-- Wave bg-->
-  <div class="wave-container">
-    <div class="wave -one"></div>
-    <div class="wave -two"></div>
-    <div class="wave -three"></div>
-  </div>
-  <div class="line"></div>
-  <div class="text-wrap">
-    <div class="text"><span>L</span><span>I</span><span>S</span><span>T</span><span>E</span><span>N</span>
-      <div class="main-btn_wrapper"><i class="main-btn fa fa-play" aria-hidden="true"></i></div>
-    </div>
-  </div>
-  <div class="header">
-    <div class="burger-wrapper">
-      <div class="burger"></div>
-    </div>
-    <div class="logo-text">Listeners Playlist</div>
-    <div class="back_btn">
-      <div class="circle"></div>
-      <div class="text">Back</div>
-    </div>
-  </div>
-  <div class="nav">
-    <ul class="nav_main">
-      <li> <a class="nav_link">Home	</a></li>
-      <li> <a class="nav_link">Listeners</a></li>
-      <li> <a class="nav_link">Compilations</a></li>
-      <li> <a class="nav_link">LP. Mix</a></li>
-    </ul>
-    <div class="nav_divider"></div>
-    <ul class="nav_sub">
-      <li><a class="nav_link" href="">About	</a></li>
-      <li><a class="nav_link" href="">Contact	</a></li>
-    </ul>
-  </div>
-  <div class="mini-player">
-    <div class="track_info_wrapper">
-      <div class="track_info">
-        <div class="thumb"></div>
-        <div class="info">
-          <div class="title">Friday Comes</div>
-          <div class="artist">Early</div>
-        </div>
-      </div>
-    </div>
-    <div class="mini-player_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
-      <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i><i class="btn-open-player fa fa-list" aria-hidden="true"></i>
-    </div>
-  </div>
-  <div class="dim"></div>
-  <div class="player" id="player">
-    <div class="playback_wrapper">
-      <div class="playback_blur"></div>
-      <div class="playback_thumb"></div>
-      <div class="playback_info">
-        <div class="title">Friday Comes</div>
-        <div class="artist">Early</div>
-      </div>
-      <div class="playback_btn_wrapper"><i class="btn-prev fa fa-step-backward" aria-hidden="true"></i>
-        <div class="btn-switch"><i class="btn-play fa fa-play" aria-hidden="true"></i><i class="btn-pause fa fa-pause" aria-hidden="true"></i></div><i class="btn-next fa fa-step-forward" aria-hidden="true"></i>
-      </div>
-      <div class="playback_timeline">
-        <div class="playback_timeline_start-time">00:31</div>
-        <div class="playback_timeline_slider">
-          <div class="slider_base"></div>
-          <div class="slider_progress"></div>
-          <div class="slider_handle"></div>
-        </div>
-        <div class="playback_timeline_end-time">03:11</div>
-      </div>
-    </div>
-    <div class="list_wrapper">
-      <ul class="list"> 
-        <li class="list_item selected"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-        <li class="list_item"> 
-          <div class="thumb"> </div>
-          <div class="info"> 
-            <div class="title">Friday Comes</div>
-            <div class="artist">Early</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="page" id="curator">
-    <div class="curator_title_wrapper"><span>LP</span>
-      <div class="curator_line"></div>
-      <div class="curator_title">Listeners</div>
-      <div class="curator_line"></div><span>14</span>
-    </div>
-    <div class="curator_list">
-      <div class="curator_list_content">
-        <div class="connect_btn_wrapper item">
-          <div class="connect_btn">
-            <div class="connect_btn_text">Connect <br/>SoundCloud</div>
-          </div>
-        </div>
-        <div class="curator_list_content_desc">Or Select <br/>a Listener of <br/>L.P.			</div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="thumb"></div>
-          <div class="info">
-            <div class="name">Fantasy</div>
-            <div class="desc">Sam</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div class="curator_player_item" id="curator_player_item">
-      <script>
-        // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
-  
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
-        var player;
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('curator_player_item', {
-            height: '10',
-            width: '10',
-            videoId: 'M7lc1UVf-VE',
-            events: {
-              'onReady': onPlayerReady,
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        }
-  
-        // 4. The API will call this function when the video player is ready.
-        function onPlayerReady(event) {
-          event.target.playVideo();
-        }
-  
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
-        var done = false;
-        function onPlayerStateChange(event) {
-          if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
-          }
-        }
-        function stopVideo() {
-          player.stopVideo();
-        }
-      </script>
-    </div>
-
-
-  </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js'></script><script  src="./script.js"></script>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      생략
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      생략
+    -->
+    <title>Music Recommendation Recsys 07</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      생략
+    -->
+  </body>
 </html>
