@@ -3,14 +3,14 @@ import "./main_css/test_main.module.css";
 
 const Header = (e) => {
   return (
-    <div class="header">
-      <div class="burger-wrapper">
-        <div class="burger"></div>
+    <div className="header">
+      <div className="burger-wrapper">
+        <div className="burger"></div>
       </div>
-      <div class="logo-text">Listeners Playlist</div>
-      <div class="back_btn">
-        <div class="circle"></div>
-        <div class="text">Back</div>
+      <div className="logo-text">Listeners Playlist</div>
+      <div className="back_btn">
+        <div className="circle"></div>
+        <div className="text">Back</div>
       </div>
     </div>
   );
