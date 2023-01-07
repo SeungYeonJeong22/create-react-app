@@ -8,6 +8,7 @@ import Curator from "./curator";
 import Header from "./header";
 import Search from "./search";
 import Navigation from "./nav";
+import Background from "./background"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Body = (e) => {
@@ -27,17 +28,22 @@ const Body = (e) => {
         </header>
 
         <div className="wrapper">
-          <Home />
+          {/* 기초 세팅 */}
           <Header />
           <Navigation />
+          <MiniPlayer />
+          <div className='dim'></div>
+          <Player />
+          <Background />
+
+          {/* 홈페이지 */}
+          <Home />
+          <Curator />
           <Routes>
             <Route path="/"></Route>
             <Route path="/search" element={<Search />}></Route>
           </Routes>
-          <MiniPlayer />
-          <div className="dim"></div>
-          <Player />
-          <Curator />
+          
         </div>
       </div>
     </Router>
