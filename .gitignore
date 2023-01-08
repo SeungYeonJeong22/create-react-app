@@ -27,3 +27,6 @@ yarn-error.log*
 .env
 .env.build
 .vercel
+
+# credential page
+/src/components/spotifyAPI/Credentials.js
