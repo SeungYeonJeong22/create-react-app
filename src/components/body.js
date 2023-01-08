@@ -38,9 +38,13 @@ const Body = (e) => {
 
           {/* 홈페이지 */}
           <Home />
+
+          {/* 큐레이터 전환 */}
           <Curator />
           <Routes>
+            {/* Navigation에서 Home 누르면 LandingPage로 전환 */}
             <Route path="/"></Route>
+            {/* SearchPage로 전환 */}
             <Route path="/search" element={<Search />}></Route>
           </Routes>
           
