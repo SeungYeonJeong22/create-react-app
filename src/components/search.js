@@ -4,7 +4,8 @@ import Listbox from './spotifyAPI/Listbox';
 import Detail from './spotifyAPI/Detail';
 import { Credentials } from './spotifyAPI/Credentials';
 import axios from 'axios';
-import "./spotifyAPI/spotify.module.css"
+// import "./spotifyAPI/spotify.module.css"
+import "./main_css/test_main.module.css";
 
 const Search = () => {
   
@@ -105,19 +106,21 @@ const Search = () => {
   
 
   return (
-    <div className="container">
-      <form onSubmit={buttonClicked}>        
+    <div className="container" id='search_container'>
+      <form onSubmit={buttonClicked}>
+        <div className='drop_down_div'>
           <Dropdown label="Genre :" options={genres.listOfGenresFromAPI} selectedValue={genres.selectedGenre} changed={genreChanged} />
           <Dropdown label="Playlist :" options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged} />
-          <div className="col-sm-6 row form-group px-0">
-            <button type='submit' className="btn btn-success col-sm-12" id='submit_buttom'>
-              Search
-            </button>
+            <div className="col-sm-6 row form-group px-0">
+              <button type='submit' className="btn btn-success col-sm-12" id='submit_buttom'>
+                Search
+              </button>
+            </div>
+            <div className="row">
+              <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
+              {trackDetail && <Detail {...trackDetail} /> }
+            </div>        
           </div>
-          <div className="row">
-            <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked} />
-            {trackDetail && <Detail {...trackDetail} /> }
-          </div>        
       </form>
     </div>
     

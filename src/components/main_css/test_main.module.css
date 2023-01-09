@@ -566,6 +566,25 @@ body {
   opacity: 1;
 }
 
+#search_container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  color: #252121;
+  display: none;
+}
+
+#search_container .drop_down_div {
+  position: fixed;
+  margin-top: 17.55vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
 #curator {
   width: 100%;
   height: 100%;
@@ -608,16 +627,6 @@ body {
   opacity: 0;
 }
 
-/* .curator_player {
-  position: absolute;
-  text-align: center;
-  font-size: 14px;
-  width: 100vw;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-  opacity: 0;
-} */
 
 .curator_player_item {
   padding: 0 50px;

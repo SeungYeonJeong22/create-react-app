@@ -8,7 +8,7 @@ const Listbox = props => {
     }    
 
     return (
-        <div className="col-sm-6 px-0" id='list_box'>
+        <div className="list-box" id='list_box'>
             <div className="list-group">
                 {
                     props.items.map((item, idx) => 
@@ -22,7 +22,7 @@ const Listbox = props => {
                 }
             </div>
         </div>
-        
+
 
     );
 }

@@ -30,7 +30,8 @@ $( ".burger-wrapper" ).click(function() {
 									{xPercent: 0, display: 'block', ease: Expo.easeOut});
 		TweenMax.staggerFrom('.nav li', 0.5, {opacity:0, y: 20, ease: Power2.easeInOut}, 0.1);
 		
-		$('.logo-text').css({'opacity': '0', 'display': 'none'});
+		TweenMax.to(".logo-text", 0.5, {xPercent: -200, ease: Expo.easeIn});
+		// $('.logo-text').css({'opacity': '0', 'display': 'none'});
 }
 	// ===== If Nav is open	and in Curation page
 	else if($('.nav').css("display") === "block" && $('#curator').css("display") === "block"){
@@ -42,7 +43,8 @@ $( ".burger-wrapper" ).click(function() {
 	else {
 		TweenMax.to(".dim", 0.5, {opacity: 0, display: 'none', ease: Power2.easeInOut});
 		TweenMax.to(".nav", 0.5, {xPercent: -100, display:'none', ease: Expo.easeOut});
-		$('.logo-text').css({'opacity': '1', 'display': 'block'});
+		// $('.logo-text').css({'opacity': '1', 'display': 'block'});
+		TweenMax.to(".logo-text", 0.5, {x: 250, ease: Expo.easeOut});
 	}
 
 });
@@ -61,6 +63,9 @@ $('.dim').click(function() {
 	TweenMax.to("#player", 0.5, {xPercent: 100, display: 'none', ease: Expo.easeOut});
 	TweenMax.to(".nav", 0.5, {xPercent: -100, display: 'none', ease: Power2.easeInOut})
 	TweenMax.to(".mini-player", 0.5, {x: 0, ease: Expo.easeOut});
+	// $('.logo-text').css({'opacity': '1', 'display': 'block'});
+	TweenMax.to(".logo-text", 0.5, {x: 250, ease: Expo.easeOut});
+
 });
 
 // ===== Mini Player - Play/Pause Switch =====
@@ -232,23 +237,60 @@ $('.back_btn').click(function(){
 	}
 });
 
-// ===== Search Music Page =====
+// ===== Search Music Page Click=====
 $("#search_music_page").click(function(){
-	var homeToSearch = new TimelineMax({});
+	var search = new TimelineMax({});
 
 	// Hide
-	$('.logo-text').css('display', 'none');
-	homeToSearch.to($('.line, .text-wrap'), 0.5, {display: 'none', opacity: 0, y: -20, ease: Power2.easeInOut}, 0);
+	search.to($('.text-wrap'), 0.5, {display: 'none', opacity: 0, y: -20, ease: Power2.easeInOut}, 0);
 	
 	// Background down
-	homeToSearch.to($('.wave-container'), 1, {yPercent: 30, ease: Power2.easeInOut}, 0);
+	search.to($('.wave-container'), 1, {yPercent: 30, ease: Power2.easeInOut}, 0);
 
 	// Show
-	$('#drop_down').css('display', 'block');
-	homeToSearch.fromTo($('.list_box'), 0.8, {x: 15},
+	$('#search_container').css('display', 'block');
+
+	// $('#drop_down').css('display', 'block');
+	search.fromTo($('.list_box'), 0.8, {x: 15},
 										{display: 'flex', opacity: 1, x: 0, ease: Power2.easeInOut}, 1);
-		
-	homeToSearch.fromTo($('.submit_buttom'), 0.8, {opacity: 0, x: 30},
+
+	search.fromTo($('.submit_buttom'), 0.8, {opacity: 0, x: 30},
 										{opacity: 1, x: 0, ease: Power2.easeInOut}, 1);
+
+	// TweenMax.to(".dim", 0.5, {opacity: 0, display: 'none', ease: Power2.easeInOut});
+	// TweenMax.to(".nav", 0.5, {xPercent: -100, display:'none', ease: Expo.easeOut});
+	// $('.logo-text').css({'opacity': '1', 'display': 'block'});										
+		
+});
+
+
+// ===== Home Page Click =====
+$("#home_page").click(function(){
+
+	var mainToHome = new TimelineMax({});
+	// Hide
+	// mainToHome.fromTo($('.submit_buttom'), 0.5, {opacity: 1, display: 'block', x: 0},
+	// 									{opacity: 0, x: 30, display: 'none', ease: Power2.easeInOut}, 0.5);
+
+	mainToHome.to($('.submit_buttom'), 0.5, {display: 'none', opacity: 0, x: 15, ease: Power2.easeInOut}, 0.5);										
+
+	mainToHome.to($('.list_box'), 0.5, {display: 'none', opacity: 0, x: 15, ease: Power2.easeInOut}, 0.5);
+
+	mainToHome.to($('#drop_down'), 0, {display: 'none', ease: Power2.easeInOut}, 1);
+
+
+
+
+	// Background Up
+	mainToHome.to($('.wave-container'), 1, {yPercent: 0, ease: Power2.easeInOut}, 1);
+
+	// 	Show
+	mainToHome.to($('.text-wrap'), 0.5, {display: 'flex', opacity: 1, y: 0, ease: Power2.easeInOut}, 1.2);
+
+	mainToHome.to($('.logo-text, .line'), 0.5, {display: 'block', opacity: 1, y: 0, ease: Power2.easeInOut}, 1.2);
+
+	// 	Force to redraw by using y translate
+	mainToHome.fromTo($('.text-wrap .text'), 0.1, {y: 0.1, position: 'absolute'},
+										{y: 0, position: 'relative', ease: Power2.easeInOut}, 1.3);							
 		
 });
